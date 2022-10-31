@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "KROCTnABhn3AXJ3Fru9b+2HIFWJ9ZXYsDcvze3DRbgUYcmCfvvmUzCmHm30O1IrefQInrvCEINmm4ILaZVVygg==",
+  "success": true,
+  "projectFilePath": "G:\\Github Clone dump\\JwtApp\\Jwt.API\\Jwt.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\chaos\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\chaos\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\chaos\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\chaos\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\chaos\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\chaos\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
