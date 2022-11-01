@@ -49,7 +49,6 @@ builder.Services.AddControllersWithViews()
         options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
     });
 builder.Services.AddScoped<IPasswordService, PasswordHandler>();
-builder.Services.AddScoped<AppDbInit>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

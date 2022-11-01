@@ -20,14 +20,16 @@ namespace Jwt.API.Controllers
         private readonly AppDbContext _context;
         private readonly IConfiguration _configuration;
         private readonly IPasswordService _passwordService;
-        public UsersController(AppDbContext context, IConfiguration configuration, IPasswordService passwordService)
+        public UsersController(AppDbContext context,
+           IConfiguration configuration,
+           IPasswordService passwordService)
         {
             _context = context;
             _configuration = configuration;
             _passwordService = passwordService;
         }
-        [HttpGet("get")]
-        public async Task<ActionResult<List<User>>> Get()
+        [HttpGet("getAllUsers")]
+        public async Task<ActionResult<List<User>>> GetAllusers()
         {
             var users = await _context.Users.ToListAsync();
             if(users == null)
@@ -103,7 +105,7 @@ namespace Jwt.API.Controllers
             }
 
         }
-        [HttpPost("CreateAdmin"), AllowAnonymous]
+        [HttpPost("CreateAdmin")]
         public async Task<ActionResult<User>> CreateAdminUser(UserPlain request)
         {
 

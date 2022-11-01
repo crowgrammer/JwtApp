@@ -19,7 +19,7 @@ namespace Jwt.API.Controllers
             
         }
 
-        [HttpGet("GetAllOrders")]
+        [HttpGet("GetAllOrders"), Authorize(Roles ="Admin")]
         public async Task<ActionResult<List<Order>>> GetAll()
         {
             try
@@ -35,7 +35,7 @@ namespace Jwt.API.Controllers
                 return BadRequest();
             }
         }
-        [HttpGet("GetOrder")]
+        [HttpGet("GetOrder"), Authorize(Roles = "Admin")]
         public async Task<ActionResult<Order>> GetOrder(int? id)
         {
             try

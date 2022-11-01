@@ -1,26 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Github-Projects folder\\JwtApp\\Jwt.UnitTests\\Jwt.UnitTests.csproj": {}
+    "G:\\Github Clone dump\\JwtApp\\Jwt.UnitTests\\Jwt.UnitTests.csproj": {}
   },
   "projects": {
-    "D:\\Github-Projects folder\\JwtApp\\Jwt.UnitTests\\Jwt.UnitTests.csproj": {
+    "G:\\Github Clone dump\\JwtApp\\Jwt.API\\Jwt.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Github-Projects folder\\JwtApp\\Jwt.UnitTests\\Jwt.UnitTests.csproj",
-        "projectName": "Jwt.UnitTests",
-        "projectPath": "D:\\Github-Projects folder\\JwtApp\\Jwt.UnitTests\\Jwt.UnitTests.csproj",
-        "packagesPath": "C:\\Users\\admmuhaalaa\\.nuget\\packages\\",
-        "outputPath": "D:\\Github-Projects folder\\JwtApp\\Jwt.UnitTests\\obj\\",
+        "projectUniqueName": "G:\\Github Clone dump\\JwtApp\\Jwt.API\\Jwt.API.csproj",
+        "projectName": "Jwt.API",
+        "projectPath": "G:\\Github Clone dump\\JwtApp\\Jwt.API\\Jwt.API.csproj",
+        "packagesPath": "C:\\Users\\chaos\\.nuget\\packages\\",
+        "outputPath": "G:\\Github Clone dump\\JwtApp\\Jwt.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\admmuhaalaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\chaos\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,25 +40,119 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "Swashbuckle.AspNetCore.Filters": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\Github Clone dump\\JwtApp\\Jwt.UnitTests\\Jwt.UnitTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Github Clone dump\\JwtApp\\Jwt.UnitTests\\Jwt.UnitTests.csproj",
+        "projectName": "Jwt.UnitTests",
+        "projectPath": "G:\\Github Clone dump\\JwtApp\\Jwt.UnitTests\\Jwt.UnitTests.csproj",
+        "packagesPath": "C:\\Users\\chaos\\.nuget\\packages\\",
+        "outputPath": "G:\\Github Clone dump\\JwtApp\\Jwt.UnitTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\chaos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "G:\\Github Clone dump\\JwtApp\\Jwt.API\\Jwt.API.csproj": {
+                "projectPath": "G:\\Github Clone dump\\JwtApp\\Jwt.API\\Jwt.API.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.1.0, )"
+              "version": "[17.3.2, )"
             },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.2.0, )"
             },
             "xunit": {
               "target": "Package",
-              "version": "[2.4.1, )"
+              "version": "[2.4.2, )"
             },
             "xunit.runner.visualstudio": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.4.3, )"
+              "version": "[2.4.5, )"
             }
           },
           "imports": [
@@ -76,7 +171,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
