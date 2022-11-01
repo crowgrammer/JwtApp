@@ -132,3 +132,7 @@ D:\Github-Projects folder\JwtApp\Jwt.API\obj\Debug\net6.0\refint\Jwt.API.dll
 D:\Github-Projects folder\JwtApp\Jwt.API\obj\Debug\net6.0\Jwt.API.pdb
 D:\Github-Projects folder\JwtApp\Jwt.API\obj\Debug\net6.0\Jwt.API.genruntimeconfig.cache
 D:\Github-Projects folder\JwtApp\Jwt.API\obj\Debug\net6.0\ref\Jwt.API.dll
+G:\Github Clone dump\JwtApp\Jwt.API\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+G:\Github Clone dump\JwtApp\Jwt.API\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+G:\Github Clone dump\JwtApp\Jwt.API\bin\Debug\net6.0\Newtonsoft.Json.dll
+G:\Github Clone dump\JwtApp\Jwt.API\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
