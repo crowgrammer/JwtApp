@@ -1,4 +1,5 @@
 ﻿using Jwt.API.Models;
+using Jwt.API.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -18,10 +19,12 @@ namespace Jwt.API.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IConfiguration _configuration;
-        public UsersController(AppDbContext context, IConfiguration configuration)
+        private readonly IPasswordService _passwordService;
+        public UsersController(AppDbContext context, IConfiguration configuration, IPasswordService passwordService)
         {
             _context = context;
             _configuration = configuration;
+            _passwordService = passwordService;
         }
         [HttpGet("get")]
         public async Task<ActionResult<List<User>>> Get()
@@ -43,7 +46,7 @@ namespace Jwt.API.Controllers
             }
             try
             {
-                CreatePasswordHash(request.password, out byte[] hash, out byte[] salt);
+                _passwordService.CreatePasswordHash(request.password, out byte[] hash, out byte[] salt);
                 user.username = request.username;
                 user.passwordHash = hash;
                 user.passwordSalt = salt;
@@ -85,7 +88,7 @@ namespace Jwt.API.Controllers
             User user = new();
             try
             {
-            CreatePasswordHash(request.password, out byte[] hash, out byte[] salt );
+            _passwordService.CreatePasswordHash(request.password, out byte[] hash, out byte[] salt );
             user.username = request.username;
             user.passwordHash = hash;
             user.passwordSalt = salt;
@@ -107,7 +110,7 @@ namespace Jwt.API.Controllers
             User user = new();
             try
             {
-                CreatePasswordHash(request.password, out byte[] hash, out byte[] salt);
+                _passwordService.CreatePasswordHash(request.password, out byte[] hash, out byte[] salt);
                 user.username = request.username;
                 user.passwordHash = hash;
                 user.passwordSalt = salt;
@@ -130,58 +133,11 @@ namespace Jwt.API.Controllers
             {
                 return NotFound("User not found");
             }
-            if(!VerifyPassword(request.password, user.passwordHash, user.passwordSalt)){
+            if(!_passwordService.VerifyPassword(request.password, user.passwordHash, user.passwordSalt)){
                 return BadRequest("Wrong Password");
             }
-            string token = CreateToken(user);
+            string token = _passwordService.CreateToken(user, _configuration.GetSection("AppSettings:Token").Value);
             return Ok(token);
-        }
-
-
-
-
-
-
-
-        //Helper Functions
-        //TODO: Convert to Services
-        private string CreateToken(User user)
-        {
-            List<Claim> claims = new()
-            {
-                new Claim(ClaimTypes.Name, user.username),
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Role, user.role)
-            };
-            var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(
-                _configuration.GetSection("AppSettings:Token").Value));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
-            var token = new JwtSecurityToken(
-                claims: claims,
-                expires: DateTime.UtcNow.AddHours(1),
-                signingCredentials: creds
-                );
-            var jwt = new JwtSecurityTokenHandler().WriteToken(token);
-            return jwt;
-        }
-
-
-        private void CreatePasswordHash(string password, out byte[] hash, out byte[] salt)
-        {
-            using( var hmac = new HMACSHA512())
-            {
-                salt = hmac.Key;
-                hash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-            }
-        }
-        private bool VerifyPassword(string password,  byte[] hash,  byte[] salt)
-        {
-            using (var hmac = new HMACSHA512(salt))
-            {
-                
-                var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-                return computedHash.SequenceEqual(hash);
-            }
         }
     }
 }

@@ -1,27 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Github Clone dump\\JwtApp\\Jwt.UnitTests\\Jwt.UnitTests.csproj": {}
+    "D:\\Github-Projects folder\\JwtApp\\Jwt.UnitTests\\Jwt.UnitTests.csproj": {}
   },
   "projects": {
-    "G:\\Github Clone dump\\JwtApp\\Jwt.UnitTests\\Jwt.UnitTests.csproj": {
+    "D:\\Github-Projects folder\\JwtApp\\Jwt.UnitTests\\Jwt.UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Github Clone dump\\JwtApp\\Jwt.UnitTests\\Jwt.UnitTests.csproj",
+        "projectUniqueName": "D:\\Github-Projects folder\\JwtApp\\Jwt.UnitTests\\Jwt.UnitTests.csproj",
         "projectName": "Jwt.UnitTests",
-        "projectPath": "G:\\Github Clone dump\\JwtApp\\Jwt.UnitTests\\Jwt.UnitTests.csproj",
-        "packagesPath": "C:\\Users\\chaos\\.nuget\\packages\\",
-        "outputPath": "G:\\Github Clone dump\\JwtApp\\Jwt.UnitTests\\obj\\",
+        "projectPath": "D:\\Github-Projects folder\\JwtApp\\Jwt.UnitTests\\Jwt.UnitTests.csproj",
+        "packagesPath": "C:\\Users\\admmuhaalaa\\.nuget\\packages\\",
+        "outputPath": "D:\\Github-Projects folder\\JwtApp\\Jwt.UnitTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chaos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admmuhaalaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -77,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

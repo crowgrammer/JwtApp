@@ -1,4 +1,5 @@
 using Jwt.API.Models;
+using Jwt.API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
@@ -9,7 +10,6 @@ using System.Text;
 
 
 var builder = WebApplication.CreateBuilder(args);
-
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -48,6 +48,8 @@ builder.Services.AddControllersWithViews()
     {
         options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
     });
+builder.Services.AddScoped<IPasswordService, PasswordHandler>();
+builder.Services.AddScoped<AppDbInit>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -62,5 +64,4 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
 app.Run();

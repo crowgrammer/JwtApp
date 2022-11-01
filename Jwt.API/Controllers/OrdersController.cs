@@ -57,7 +57,7 @@ namespace Jwt.API.Controllers
         }
 
         [HttpPost("Create"),Authorize]
-        public async Task<ActionResult> CreateOrder(string request)
+        public async Task<ActionResult<string>> CreateOrder(string request)
         {
                 Order order = new Order();
                 order.OrderTitle = request;
@@ -69,7 +69,7 @@ namespace Jwt.API.Controllers
             {
                 _context.Orders.Add(order);
                 await _context.SaveChangesAsync();
-                return Ok();
+                return Ok($"Your Order I is {order.Id} Please Save it for tracking purposes.");
             }
             catch
             {
@@ -95,7 +95,7 @@ namespace Jwt.API.Controllers
                 return BadRequest();
             }
         }
-        [HttpGet("Update"), Authorize(Roles = "Admin")]
+        [HttpGet("GetAvailableStatus"), Authorize(Roles = "Admin")]
         public async Task<ActionResult<List<OrderStatus>>> Update()
         {
             try
@@ -143,6 +143,7 @@ namespace Jwt.API.Controllers
             if(order == null) { return NotFound("Order Not Found"); }
             Dictionary<String, String> result = new Dictionary<String, String>();
             result.Add("Order ID", order.Id.ToString());
+            result.Add("Order Title", order.OrderTitle);
             result.Add("Order Status", order.OrderStatus.Status);
             result.Add("Order Created", order.CreatedDate.ToString());
             result.Add("Order Last Modified By", order.User.username);
