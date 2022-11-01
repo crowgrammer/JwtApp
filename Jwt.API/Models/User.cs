@@ -8,7 +8,7 @@
         public byte[] passwordSalt { get; set; }
         public string role { get; set; }
         //navigation props
-        public List<Order> orders { get; set; }
+        public virtual ICollection<Order> orders { get; set; }
 
     }
 }

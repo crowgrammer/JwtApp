@@ -5,6 +5,6 @@
         public int Id { get; set; }
         public string Status { get; set; } = string.Empty;
         //navigation props
-        public List<Order> orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

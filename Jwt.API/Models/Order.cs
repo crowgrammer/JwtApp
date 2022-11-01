@@ -11,12 +11,12 @@ namespace Jwt.API.Models
         //navigation props
         [DisplayName("Order Status")]
         public int OrderStatusId { get; set; }
-        public OrderStatus OrderStatus { get; set; }
         [DisplayName("Created By")]
         public string Creatorname { get; set; } = string.Empty;
         [DisplayName("Modified By")]
         public int? UserId { get; set; }
 
-        public User User { get; set; }
+        public virtual User User { get; set; } = null!;
+        public virtual OrderStatus OrderStatus { get; set; } = null!;
     }
 }

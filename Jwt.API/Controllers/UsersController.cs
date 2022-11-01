@@ -100,7 +100,7 @@ namespace Jwt.API.Controllers
             }
 
         }
-        [HttpPost("CreateAdmin")]
+        [HttpPost("CreateAdmin"), AllowAnonymous]
         public async Task<ActionResult<User>> CreateAdminUser(UserPlain request)
         {
 
